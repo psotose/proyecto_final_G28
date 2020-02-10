@@ -1,24 +1,29 @@
-# README
+#Corredora
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Proyecto de integración de contenidos en Desafío Latam G28 Full Stack
 
-Things you may want to cover:
+El proyecto es un sistema de calificaciones de corredoras de propiedad de Santiago para arrendamientos, web construído con Ruby on Rails 5.2.3 y base de datos Postgresql
 
-* Ruby version
+El diagrama conceptual muestra las principales entidades con las que trabajará la aplicación:
 
-* System dependencies
+![alt text][concept]
 
-* Configuration
+[concept]: /debarrio.png "Diagrama conceptual"
 
-* Database creation
+El tablero Trello con el backlog y las historias de usuario está disponible en el siguiente link:
 
-* Database initialization
+[Tablero Trello] (https://trello.com/b/en3tTtWe/proyecto-final-g28)
 
-* How to run the test suite
+El diseño inicial de la base de datos (no implementado aún) contempla las siguientes tablas/modelos con las relaciones indicadas.
 
-* Services (job queues, cache servers, search engines, etc.)
+![alt text][logic]
 
-* Deployment instructions
+[logic]: /logic_diagram.png "Diagrama lógico"
 
-* ...
+## Pasos para levantar el proyecto
+
+-Clonar el repo
+-rails db:create
+-rails db:migrate
+-rails db:seed
+-rails s
