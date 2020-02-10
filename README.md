@@ -1,5 +1,7 @@
 #Corredora
 
+[link a Heroku] (https://floating-bastion-82789.herokuapp.com/)
+
 Proyecto de integración de contenidos en Desafío Latam G28 Full Stack
 
 El proyecto es un sistema de calificaciones de corredoras de propiedad de Santiago para arrendamientos, web construído con Ruby on Rails 5.2.3 y base de datos Postgresql
@@ -8,7 +10,7 @@ El diagrama conceptual muestra las principales entidades con las que trabajará 
 
 ![alt text][concept]
 
-[concept]: /debarrio.png "Diagrama conceptual"
+[concept]: /conceptual_diagram.png "Diagrama conceptual"
 
 El tablero Trello con el backlog y las historias de usuario está disponible en el siguiente link:
 
