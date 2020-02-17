@@ -1,0 +1,2 @@
+class RealEstateBrokersController < ApplicationController
+end

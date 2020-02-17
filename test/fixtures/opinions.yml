@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  comments: MyString
+  user: one
+  real_estate_broker: one
+
+two:
+  rating: 1
+  comments: MyString
+  user: two
+  real_estate_broker: two

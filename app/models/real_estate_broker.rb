@@ -1,0 +1,2 @@
+class RealEstateBroker < ApplicationRecord
+end

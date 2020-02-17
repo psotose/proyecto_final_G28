@@ -1,0 +1,13 @@
+class CreateRealEstateBrokers < ActiveRecord::Migration[5.2]
+  def change
+    create_table :real_estate_brokers do |t|
+      t.string :name
+      t.string :rut
+      t.string :agent
+      t.string :mail
+      t.string :phone
+
+      t.timestamps
+    end
+  end
+end
