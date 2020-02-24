@@ -1,0 +1,42 @@
+<%= form_with(model: real_estate_broker, local: true) do |form| %>
+  <% if real_estate_broker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(real_estate_broker.errors.count, "error") %> prohibited this real_estate_broker from being saved:</h2>
+
+      <ul>
+      <% real_estate_broker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rut %>
+    <%= form.text_field :rut %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agent %>
+    <%= form.text_field :agent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mail %>
+    <%= form.text_field :mail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

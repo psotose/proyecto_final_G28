@@ -2,12 +2,12 @@
 
 one:
   rating: 1
-  comments: MyString
+  comment: MyString
   user: one
   real_estate_broker: one
 
 two:
   rating: 1
-  comments: MyString
+  comment: MyString
   user: two
   real_estate_broker: two

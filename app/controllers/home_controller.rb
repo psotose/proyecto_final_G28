@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!
+  
   
   def index
+    @real_estate_brokers = RealEstateBroker.all
   end
 end

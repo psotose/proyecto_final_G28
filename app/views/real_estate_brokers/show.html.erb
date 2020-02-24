@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @real_estate_broker.name %>
+</p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @real_estate_broker.rut %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @real_estate_broker.agent %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @real_estate_broker.mail %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @real_estate_broker.phone %>
+</p>
+
+<%= link_to 'Edit', edit_real_estate_broker_path(@real_estate_broker) %> |
+<%= link_to 'Back', real_estate_brokers_path %>

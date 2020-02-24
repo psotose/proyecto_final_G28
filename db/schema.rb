@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_193145) do
+ActiveRecord::Schema.define(version: 2020_02_24_154034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "opinions", force: :cascade do |t|
     t.integer "rating"
-    t.string "comments"
+    t.string "comment"
     t.bigint "user_id"
     t.bigint "real_estate_broker_id"
     t.datetime "created_at", null: false
