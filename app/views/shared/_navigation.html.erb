@@ -12,22 +12,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown link
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                       <div class="dropdown-divider"></div>
-                         <%if user_signed_in?%>
+                    <%if user_signed_in?%>
+                        <li><%= link_to 'Crear y evaluar una corredora', new_real_estate_broker_path, class: "dropdown-item" %></li>
+                        <li><a class="dropdown-item" href="#">Mis evaluaciones</a></li>
+                        <li><%= link_to 'Mi perfil', edit_user_registration_path, class: "dropdown-item" %></li>
+                        <div class="dropdown-divider"></div> 
                         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
                         <%else%>
                         <li><%= link_to 'Sign up', new_user_registration_path, class: "dropdown-item"%></li>  

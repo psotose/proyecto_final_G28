@@ -28,12 +28,17 @@
 
   <div class="field">
     <%= form.label :mail %>
-    <%= form.text_field :mail %>
+    <%= form.email_field :mail %>
   </div>
 
   <div class="field">
     <%= form.label :phone %>
     <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">

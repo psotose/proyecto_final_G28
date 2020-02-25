@@ -10,6 +10,7 @@
       <th>Agent</th>
       <th>Mail</th>
       <th>Phone</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= real_estate_broker.agent %></td>
         <td><%= real_estate_broker.mail %></td>
         <td><%= real_estate_broker.phone %></td>
+        <td><%= real_estate_broker.image %></td>
         <td><%= link_to 'Show', real_estate_broker %></td>
         <td><%= link_to 'Edit', edit_real_estate_broker_path(real_estate_broker) %></td>
         <td><%= link_to 'Destroy', real_estate_broker, method: :delete, data: { confirm: 'Are you sure?' } %></td>

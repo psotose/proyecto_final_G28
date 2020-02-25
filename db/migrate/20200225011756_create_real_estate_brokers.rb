@@ -6,6 +6,7 @@ class CreateRealEstateBrokers < ActiveRecord::Migration[5.2]
       t.string :agent
       t.string :mail
       t.string :phone
+      t.string :image
 
       t.timestamps
     end

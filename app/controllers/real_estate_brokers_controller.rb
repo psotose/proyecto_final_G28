@@ -25,8 +25,8 @@ class RealEstateBrokersController < ApplicationController
   # POST /real_estate_brokers
   # POST /real_estate_brokers.json
   def create
-    @real_estate_broker = RealEstateBroker.new(real_estate_broker_params)
-
+    @real_estate_broker = RealEstateBroker.new(real_estate_broker_params.merge(user:current_user))
+    @real_estate_broker.user = current_user
     respond_to do |format|
       if @real_estate_broker.save
         format.html { redirect_to @real_estate_broker, notice: 'Real estate broker was successfully created.' }
@@ -70,6 +70,6 @@ class RealEstateBrokersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def real_estate_broker_params
-      params.require(:real_estate_broker).permit(:name, :rut, :agent, :mail, :phone)
+      params.require(:real_estate_broker).permit(:name, :rut, :agent, :mail, :phone, :image)
     end
 end

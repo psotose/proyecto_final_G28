@@ -15,6 +15,7 @@ class RealEstateBrokersTest < ApplicationSystemTestCase
     click_on "New Real Estate Broker"
 
     fill_in "Agent", with: @real_estate_broker.agent
+    fill_in "Image", with: @real_estate_broker.image
     fill_in "Mail", with: @real_estate_broker.mail
     fill_in "Name", with: @real_estate_broker.name
     fill_in "Phone", with: @real_estate_broker.phone
@@ -30,6 +31,7 @@ class RealEstateBrokersTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Agent", with: @real_estate_broker.agent
+    fill_in "Image", with: @real_estate_broker.image
     fill_in "Mail", with: @real_estate_broker.mail
     fill_in "Name", with: @real_estate_broker.name
     fill_in "Phone", with: @real_estate_broker.phone

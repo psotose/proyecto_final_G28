@@ -6,6 +6,7 @@ one:
   agent: MyString
   mail: MyString
   phone: MyString
+  image: MyString
 
 two:
   name: MyString
@@ -13,3 +14,4 @@ two:
   agent: MyString
   mail: MyString
   phone: MyString
+  image: MyString

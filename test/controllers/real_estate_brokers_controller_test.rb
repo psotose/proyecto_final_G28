@@ -17,7 +17,7 @@ class RealEstateBrokersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create real_estate_broker" do
     assert_difference('RealEstateBroker.count') do
-      post real_estate_brokers_url, params: { real_estate_broker: { agent: @real_estate_broker.agent, mail: @real_estate_broker.mail, name: @real_estate_broker.name, phone: @real_estate_broker.phone, rut: @real_estate_broker.rut } }
+      post real_estate_brokers_url, params: { real_estate_broker: { agent: @real_estate_broker.agent, image: @real_estate_broker.image, mail: @real_estate_broker.mail, name: @real_estate_broker.name, phone: @real_estate_broker.phone, rut: @real_estate_broker.rut } }
     end
 
     assert_redirected_to real_estate_broker_url(RealEstateBroker.last)
@@ -34,7 +34,7 @@ class RealEstateBrokersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update real_estate_broker" do
-    patch real_estate_broker_url(@real_estate_broker), params: { real_estate_broker: { agent: @real_estate_broker.agent, mail: @real_estate_broker.mail, name: @real_estate_broker.name, phone: @real_estate_broker.phone, rut: @real_estate_broker.rut } }
+    patch real_estate_broker_url(@real_estate_broker), params: { real_estate_broker: { agent: @real_estate_broker.agent, image: @real_estate_broker.image, mail: @real_estate_broker.mail, name: @real_estate_broker.name, phone: @real_estate_broker.phone, rut: @real_estate_broker.rut } }
     assert_redirected_to real_estate_broker_url(@real_estate_broker)
   end
 
