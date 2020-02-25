@@ -27,7 +27,7 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @real_estate_broker.image %>
+  <%= image_tag @real_estate_broker.image.variant(resize: "100x100") %>
 </p>
 
 <%= link_to 'Edit', edit_real_estate_broker_path(@real_estate_broker) %> |
