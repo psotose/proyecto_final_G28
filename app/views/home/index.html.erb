@@ -1,2 +1,22 @@
+<p id="notice"><%= notice %></p>
 
-<h1>Solo para ti</h1>
+<h1 class="py-4" align="center">Corredoras</h1>
+
+<% @real_estate_brokers.each_slice(5) do |real_estates|%>
+    <div class= "card-deck">
+      <% real_estates.each do |real_estate| %>  
+           <div class="card" style="width: 18rem;">
+               <%= image_tag real_estate.image.variant(resize: "100x100") %>
+               <div class="card-body">
+                 <h5 class="card-title"><%= real_estate.name  %></h5>
+                 <h5 class="card-title"><%= real_estate.rut %></h5>
+                 <h5 class="card-title"><%= real_estate.agent %></h5>
+                 <h5 class="card-title"><%= real_estate.mail %></h5>
+                 <h5 class="card-title"><%= real_estate.phone %></h5>
+                 <h5 class="card-title"><%= @real_estate.opinion %></h5>
+                 <h5 class="card-title"><%= link_to 'Show', real_estate_broker %></h5>
+               </div>
+           </div>    
+      <% end %>
+    </div>
+<% end %>

@@ -12,12 +12,12 @@ class OpinionsController < ApplicationController
 
     def create
         @opinion = Opinion.new(opinion_params)
-        @opinion.user_id = current_user.user_id
-        @opinion.real_estate_broker_id = @opinion.user_id
+        @opinion.real_estate_broker = Real_estate_broker.find(params[:real_estate_broker_id])
+        @opinion.user = current_user
         if @opinion.save
-            redirect_to @real_estate_broker_id
+            format.html { redirect_to @opinion.real_estate_broker, notice: 'Su comentario ha sido guardado con éxito!.' }
         else    
-            render 'new'
+            format.html {render :new}
         end
     end  
     
@@ -41,7 +41,7 @@ class OpinionsController < ApplicationController
     private
 
         def set_opinion
-            @opinion = Opinion.fin(params[:id])
+            @opinion = Opinion.find(params[:id])
         end
         
         def set_real_estate_broker

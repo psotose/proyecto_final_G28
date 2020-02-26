@@ -29,6 +29,22 @@
   <strong>Image:</strong>
   <%= image_tag @real_estate_broker.image.variant(resize: "100x100") %>
 </p>
+<p>
+	  <strong>Opinion:</strong>
+	  <%= @real_estate_broker.opinion %>
+</p>
 
-<%= link_to 'Edit', edit_real_estate_broker_path(@real_estate_broker) %> |
+  <% if @opinions.blank? %>
+    <h3>Aun no hay reseñas sobre esta corredora, te gustaría dejar una?</h3>
+    <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(@real_estate_broker), class: "btn btn-danger" %>
+  <% else %>
+    <% @opinions.each do |opinion| %>
+      <div class="reviews">
+        <p><%= opinion.rating %></p>
+        <p><%= opinion.comment %></p>
+      </div>
+    <% end %>
+	<% end %>
+<%= link_to 'Edita', edit_real_estate_broker_path(@real_estate_broker) %> |
+<%= link_to 'Escribe una reseña', new_real_estate_broker_opinion_path %>
 <%= link_to 'Back', real_estate_brokers_path %>

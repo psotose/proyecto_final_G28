@@ -1,37 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Real Estate Brokers</h1>
+<h1 class="py-4" align="center">Corredoras</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Rut</th>
-      <th>Agent</th>
-      <th>Mail</th>
-      <th>Phone</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @real_estate_brokers.each do |real_estate_broker| %>
-      <tr>
-        <td><%= real_estate_broker.name %></td>
-        <td><%= real_estate_broker.rut %></td>
-        <td><%= real_estate_broker.agent %></td>
-        <td><%= real_estate_broker.mail %></td>
-        <td><%= real_estate_broker.phone %></td>
-        <td><%= real_estate_broker.image %></td>
-        <td><%= link_to 'Show', real_estate_broker %></td>
-        <td><%= link_to 'Edit', edit_real_estate_broker_path(real_estate_broker) %></td>
-        <td><%= link_to 'Destroy', real_estate_broker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @real_estate_brokers.each_slice(5) do |real_estates|%>
+  <div class= "card-deck">
+   <% real_estates.each do |real_estate| %>  
+    <div class="card" style="width: 18rem;">
+      <%= image_tag real_estate.image.variant(resize: "100x100") %>
+      <div class="card-body">
+        <h5 class="card-title"><%= real_estate.name  %></h5>
+        <h5 class="card-title"><%= real_estate.rut %></h5>
+        <h5 class="card-title"><%= real_estate.agent %></h5>
+        <h5 class="card-title"><%= real_estate.mail %></h5>
+        <h5 class="card-title"><%= real_estate.phone %></h5>
+        <h5 class="card-title"><%= @real_estate.opinion %></h5>
+      </div>
+    </div>    
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  </div>
+<% end %>
+        <td><%= link_to 'Show', @real_estate_broker %></td>
+        <td><%= link_to 'Edit', edit_real_estate_broker_path(@real_estate_broker) %></td>
+        <td><%= link_to 'Destroy', @real_estate_broker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
+   
 
 <%= link_to 'New Real Estate Broker', new_real_estate_broker_path %>
