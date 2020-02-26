@@ -30,7 +30,7 @@ class RealEstateBrokersController < ApplicationController
     @real_estate_broker.user = current_user
     respond_to do |format|
       if @real_estate_broker.save
-        format.html { redirect_to @real_estate_broker, notice: 'Real estate broker was successfully created.' }
+        format.html { redirect_to @real_estate_broker, notice: 'La corredora ha sido creada.' }
         format.json { render :show, status: :created, location: @real_estate_broker }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class RealEstateBrokersController < ApplicationController
   def update
     respond_to do |format|
       if @real_estate_broker.update(real_estate_broker_params)
-        format.html { redirect_to @real_estate_broker, notice: 'Real estate broker was successfully updated.' }
+        format.html { redirect_to @real_estate_broker, notice: 'La información de la corredora ha sido modificada éxitosamente!.' }
         format.json { render :show, status: :ok, location: @real_estate_broker }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class RealEstateBrokersController < ApplicationController
   def destroy
     @real_estate_broker.destroy
     respond_to do |format|
-      format.html { redirect_to real_estate_brokers_url, notice: 'Real estate broker was successfully destroyed.' }
+      format.html { redirect_to real_estate_brokers_url, notice: 'Se ha eliminado la corredora.' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +71,6 @@ class RealEstateBrokersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def real_estate_broker_params
-      params.require(:real_estate_broker).permit(:name, :rut, :agent, :mail, :phone, :image)
+      params.require(:real_estate_broker).permit(:name, :rut, :agent, :mail, :phone, :image, :user )
     end
 end
