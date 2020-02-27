@@ -31,7 +31,7 @@
 </p>
 <p>
 	  <strong>Opinion:</strong>
-	  <%= @real_estate_broker.opinion %>
+	  <%= @real_estate_broker.opinions %>
 </p>
 
   <% if @opinions.blank? %>
@@ -46,5 +46,5 @@
     <% end %>
 	<% end %>
 <%= link_to 'Edita', edit_real_estate_broker_path(@real_estate_broker) %> |
-<%= link_to 'Escribe una reseña', new_real_estate_broker_opinion_path %>
+<%= link_to 'Escribe una reseña', new_real_estate_broker_opinion_path(@real_estate_broker) %>
 <%= link_to 'Back', real_estate_brokers_path %>
