@@ -1,6 +1,6 @@
 #Corredora
 
-[link a Heroku] (https://floating-bastion-82789.herokuapp.com/)
+[link a Heroku] (https://mi-corredora.herokuapp.com/)
 
 Proyecto de integración de contenidos en Desafío Latam G28 Full Stack
 
