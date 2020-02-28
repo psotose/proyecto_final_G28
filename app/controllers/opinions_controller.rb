@@ -12,7 +12,7 @@ class OpinionsController < ApplicationController
 
     def create
         @opinion = Opinion.new(opinion_params)
-        @opinion.real_estate_broker = Real_estate_broker.find(params[:real_estate_broker_id])
+        @opinion.real_estate_broker = RealEstateBroker.find(params[:real_estate_broker_id])
         @opinion.user = current_user
         if @opinion.save
             format.html { redirect_to @opinion.real_estate_broker, notice: 'Su comentario ha sido guardado con éxito!.' }
@@ -45,7 +45,7 @@ class OpinionsController < ApplicationController
         end
         
         def set_real_estate_broker
-            @real_estate_broker = Real_estate_broker.find(params[:real_estate_broker_id])
+            @real_estate_broker = RealEstateBroker.find(params[:real_estate_broker_id])
         end    
         
         def opinion_params
