@@ -1,6 +1,6 @@
 #Corredora
 
-[link a Heroku] (https://floating-bastion-82789.herokuapp.com/)
+[link a Heroku] (https://mi-corredora.herokuapp.com/)
 
 Proyecto de integración de contenidos en Desafío Latam G28 Full Stack
 
@@ -16,7 +16,7 @@ El tablero Trello con el backlog y las historias de usuario está disponible en 
 
 [Tablero Trello] (https://trello.com/b/en3tTtWe/proyecto-final-g28)
 
-El diseño inicial de la base de datos (no implementado aún) contempla las siguientes tablas/modelos con las relaciones indicadas.
+El diseño de la base de datos contempla las siguientes tablas/modelos con las relaciones indicadas.
 
 ![alt text][logic]
 
