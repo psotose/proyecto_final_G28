@@ -11,7 +11,7 @@ class RealEstateBrokersController < ApplicationController
   # GET /real_estate_brokers/1
   # GET /real_estate_brokers/1.json
   def show
-    @opinions = Opinion.where(real_estate_broker_id: @real_estate_broker.id).order("created_at DESC")
+    @opinions = Opinion.where(real_estate_broker_id: @real_estate_broker).order("created_at DESC")
   end
 
   # GET /real_estate_brokers/new
