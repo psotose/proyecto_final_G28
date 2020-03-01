@@ -7,6 +7,7 @@
       <% real_estates.each do |real_estate| %>  
            <div class="card" style="width: 18rem;">
                <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
+               <%= image_tag 'broker-default.svg'if !real_estate.image.attached?%> 
                <div class="card-body">
                  <h5 class="card-title"><%= real_estate.name  %></h5>
                  <h5 class="card-title"><%= real_estate.rut %></h5>

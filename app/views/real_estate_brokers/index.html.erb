@@ -6,14 +6,17 @@
   <div class= "card-deck">
    <% real_estates.each do |real_estate| %>  
       <div class="card" style="width: 18rem;">
-        <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
+        <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached?%> 
+        <%= image_tag 'broker-default.svg'if !real_estate.image.attached?%> 
         <div class="card-body">
           <h5 class="card-title"><%= real_estate.name  %></h5>
           <h5 class="card-title"><%= real_estate.rut %></h5>
           <h5 class="card-title"><%= real_estate.agent %></h5>
           <h5 class="card-title"><%= real_estate.mail %></h5>
           <h5 class="card-title"><%= real_estate.phone %></h5>
+          <%if real_estate.opinions.any?%>
           <h5 class="card-title"><%= real_estate.opinions %></h5>
+          <%end%>
           <h5><%= link_to 'Show', real_estate %>
           <%= link_to 'Edit', edit_real_estate_broker_path(real_estate) %>
           <%= link_to 'Destroy', real_estate, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
