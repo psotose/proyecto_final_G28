@@ -5,23 +5,24 @@
 <% @real_estate_brokers.each_slice(5) do |real_estates|%>
   <div class= "card-deck">
    <% real_estates.each do |real_estate| %>  
-    <div class="card" style="width: 18rem;">
-      <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
-      <div class="card-body">
-        <h5 class="card-title"><%= real_estate.name  %></h5>
-        <h5 class="card-title"><%= real_estate.rut %></h5>
-        <h5 class="card-title"><%= real_estate.agent %></h5>
-        <h5 class="card-title"><%= real_estate.mail %></h5>
-        <h5 class="card-title"><%= real_estate.phone %></h5>
-        <h5 class="card-title"><%= real_estate.opinions %></h5>
-      </div>
-    </div>    
+      <div class="card" style="width: 18rem;">
+        <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
+        <div class="card-body">
+          <h5 class="card-title"><%= real_estate.name  %></h5>
+          <h5 class="card-title"><%= real_estate.rut %></h5>
+          <h5 class="card-title"><%= real_estate.agent %></h5>
+          <h5 class="card-title"><%= real_estate.mail %></h5>
+          <h5 class="card-title"><%= real_estate.phone %></h5>
+          <h5 class="card-title"><%= real_estate.opinions %></h5>
+          <h5><%= link_to 'Show', real_estate %>
+          <%= link_to 'Edit', edit_real_estate_broker_path(real_estate) %>
+          <%= link_to 'Destroy', real_estate, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+        </div>
+      </div>    
     <% end %>
   </div>
 <% end %>
-        <td><%= link_to 'Show', @real_estate_broker %></td><br>
-        <td><%= link_to 'Edit', edit_real_estate_broker_path(@real_estate_brokers) %></td><br>
-        <td><%= link_to 'Destroy', @real_estate_broker, method: :delete, data: { confirm: 'Are you sure?' } %></td><br>
+        
       
    
 

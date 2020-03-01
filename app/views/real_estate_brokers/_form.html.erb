@@ -1,12 +1,12 @@
 <%= form_with(model: real_estate_broker, local: true) do |form| %>
   <% if real_estate_broker.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(real_estate_broker.errors.count, "error") %> prohibited this real_estate_broker from being saved:</h2>
+      <h2><%= pluralize(real_estate_broker.errors.count, "error") %> No es posible guardar esta Corredora:</h2>
 
       <ul>
-      <% real_estate_broker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% real_estate_broker.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
