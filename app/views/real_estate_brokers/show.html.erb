@@ -28,10 +28,7 @@
 <p>
   <strong>Image:</strong>
   <%= image_tag @real_estate_broker.image.variant(resize: "100x100") if @real_estate_broker.image.attached? %>
-</p>
-<p>
-	  <strong>Opinion:</strong>
-	  <%= @real_estate_broker.opinions %>
+  <%= image_tag 'broker-default.svg' if !@real_estate_broker.image.attached?%> 
 </p>
 
   <% if @opinions.blank? %>
@@ -46,5 +43,5 @@
     <% end %>
 	<% end %>
 <%= link_to 'Edita', edit_real_estate_broker_path(@real_estate_broker) %> |
-<%= link_to 'Escribe una reseña', new_real_estate_broker_opinion_path(@real_estate_broker) %>
+
 <%= link_to 'Back', real_estate_brokers_path %>
