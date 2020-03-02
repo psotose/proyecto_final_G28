@@ -5,7 +5,7 @@
 <% @real_estate_brokers.each_slice(5) do |real_estates|%>
   <div class= "card-deck">
    <% real_estates.each do |real_estate| %>  
-      <div class="card" style="width: 18rem;">
+      <div class="card my-3" style="width: 18rem;">
         <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached?%> 
         <%= image_tag 'broker-default.svg'if !real_estate.image.attached?%> 
         <div class="card-body">
