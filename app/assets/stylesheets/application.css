@@ -20,3 +20,8 @@
 .img-dropdown{
     width: 5%; 
 }
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+}

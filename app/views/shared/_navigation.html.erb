@@ -6,27 +6,23 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav text-right">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="<%= root_path %>" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="<%= image_url(asset_path('user-avatar.svg'))%>" class="img-dropdown"> 
-                    </a>
-                    <ul class="dropdown-menu">
-                        <%if user_signed_in?%>
-                            <li><%= link_to 'Crear y evaluar una corredora', new_real_estate_broker_path, class: "dropdown-item" %></li>
-                            <li> <%= link_to 'Mis evaluaciones', real_estate_brokers_path, class: "dropdown-item" %></li>
-                            <li><%= link_to 'Mi perfil', edit_user_registration_path, class: "dropdown-item" %></li>
-                            <div class="dropdown-divider"></div> 
-                            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
-                        <%else%>
-                            <li><%= link_to 'Registrarse', new_user_registration_path, class: "dropdown-item"%></li>  
-                            <li><%= link_to 'Log in', new_user_session_path, class: "dropdown-item" %></li>  
-                            <li><%= link_to 'Sign in with Facebook', user_facebook_omniauth_authorize_path, class: "dropdown-item"%></li> 
-                        <%end%>
-                    </ul>
-                </li>
-            </ul> 
-        </div>
+        <div class="dropdown text-right">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="<%= image_url(asset_path('user-avatar.svg'))%>" class="img-dropdown"> 
+            </a>
+            <div class="dropdown-menu text-right" aria-labelledby="navbarDropdownMenuLink select">
+                <%if user_signed_in?%>
+                    <li><%= link_to 'Crear y evaluar una corredora', new_real_estate_broker_path, class: "dropdown-item" %></li>
+                    <li> <%= link_to 'Mis evaluaciones', real_estate_brokers_path, class: "dropdown-item" %></li>
+                    <li><%= link_to 'Mi perfil', edit_user_registration_path, class: "dropdown-item" %></li>
+                    <div class="dropdown-divider"></div> 
+                    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+                <%else%>
+                    <li><%= link_to 'Registrarse', new_user_registration_path, class: "dropdown-item"%></li>  
+                    <li><%= link_to 'Log in', new_user_session_path, class: "dropdown-item" %></li>  
+                    <li><%= link_to 'Sign in with Facebook', user_facebook_omniauth_authorize_path, class: "dropdown-item"%></li> 
+                <%end%>
+            </div>
+       </div>
     </div>
 </nav>
