@@ -1,4 +1,4 @@
-<%= form_with(model: [@real_estate_broker, Opinion.new ]) do |f| %>
+<%= form_with(model: [@real_estate_broker, Opinion.new ], local: true) do |f| %>
     <% if opinion.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(opinion.errors.count, "error") %> No es posible guardar esta reseña:</h2>
