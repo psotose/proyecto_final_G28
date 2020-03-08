@@ -14,14 +14,23 @@
  *= require_self
  */
 .img-navbar {
-    width: 5%;
+  width: 5%;
 }
 
-.img-dropdown{
-    width: 5%; 
+.img-dropdown {
+  width: 5%;
 }
 
 .dropdown-menu {
-    right: 0;
-    left: auto;
+  right: 0;
+  left: auto;
 }
+
+header {
+  background-image: url("./assets/images/jumbotron.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  padding-bottom: 10rem;
+}
+

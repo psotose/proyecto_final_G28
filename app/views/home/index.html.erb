@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
+<header class="hero text-light text-right pt-5 mt-5">
+  <div class="container">
+    <h1 class="display-1 font-weight-bold my-5">Mi Corredora</h1>
+    <p class="my-5">Ante tanta oferta no regulada de corredoras de propiedas, surge esta iniciativa para que puedas 
+    compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.</p>
+  </div>
+</header>
 
 <h1 class="py-4" align="center">Corredoras</h1>
 
@@ -17,7 +24,7 @@
                  <h5 class="card-title"><%= real_estate.mail %></h5>
                  <h5 class="card-title"><%= real_estate.phone %></h5>
                  <%if real_estate.opinions.any?%>
-                 <h5 class="card-title"><%= real_estate.opinions.rating %></h5>
+                 <h5 class="card-title"><%= real_estate.opinions %></h5>
                  <%end%>
                  <h5 class="card-title"><%= link_to 'Show', real_estate_broker_path(real_estate) %></h5>
                </div>
