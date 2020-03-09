@@ -15,7 +15,7 @@
           <h5 class="card-title"><%= real_estate.mail %></h5>
           <h5 class="card-title"><%= real_estate.phone %></h5>
           <%if real_estate.opinions.any?%>
-          <h5 class="card-title"><%= real_estate.opinions %></h5>
+          <h5 class="star-rating" data-score=<%= real_estate.average_opinion %>></h5>
           <%else%>
           <h3>Aun no hay reseñas sobre esta corredora, te gustaría dejar una?</h3>
           <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), class: "btn btn-danger" %>
@@ -30,7 +30,14 @@
   </div>
 <% end %>
         
-      
-   
-
 <%= link_to 'New Real Estate Broker', new_real_estate_broker_path %>
+
+<script>
+  $('.star-rating').raty({
+	  path: '/assets/',
+	  readOnly: true,
+	  score: function() {
+	    return $(this).attr('data-score');
+	    }
+	});
+</script>

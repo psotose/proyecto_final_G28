@@ -11,13 +11,7 @@ class RealEstateBrokersController < ApplicationController
   # GET /real_estate_brokers/1
   # GET /real_estate_brokers/1.json
   def show
-    @opinions = Opinion.where(real_estate_broker: @real_estate_broker).order("created_at DESC")
-
-    if @opinions.blank?
-      @average_opinion = 0
-    else
-      @average_opinion = @opinions.average(:rating).round(2)
-    end   
+    @opinions = Opinion.where(real_estate_broker: @real_estate_broker).order("created_at DESC")  
   end
 
   # GET /real_estate_brokers/new

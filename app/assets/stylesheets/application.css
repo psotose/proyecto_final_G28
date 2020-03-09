@@ -15,8 +15,6 @@
  *= require_self
  */
 
-
-
 .img-navbar {
   width: 5%;
 }
@@ -30,5 +28,8 @@
   left: auto;
 }
 
+.card-index {
+  max-width: 260px;
+}
 
 

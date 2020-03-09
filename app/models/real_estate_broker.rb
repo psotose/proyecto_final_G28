@@ -15,5 +15,11 @@ class RealEstateBroker < ApplicationRecord
     has_one_attached :image
     
     validates_with RUTValidator
-    
+    def average_opinion
+      if self.opinions.blank?
+        0
+      else
+        self.opinions.average(:rating).round(2)
+      end 
+    end   
 end

@@ -5,38 +5,52 @@
     <p class="my-5">Ante tanta oferta no regulada de corredoras de propiedas, surge esta iniciativa para que puedas 
     compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.</p>
   </div>
+  <form class="search-form text-center">
+  <input type="search" placeholder="Nombre corredora" class">
+  <input type="submit" value="Buscar" class="cbtn btn-primary button-fluid">
+  </form>
+
 </header>
 
 <h1 class="py-4" align="center">Corredoras</h1>
+
 <div class="container">
-<% @real_estate_brokers.each_slice(3) do |real_estates|%>
-    <div class= "card-deck d-flex justify-content-around">
-    
-      <% real_estates.each do |real_estate| %>  
-           <div class="card " >
-               <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
-               <div class="text-center">
-               <%= image_tag 'broker-default.svg', size: "60x60", class:"rounded" if !real_estate.image.attached?%> 
-               </div>
-               <div class="card-body">
-                 <h5 class="card-title"><%= real_estate.name  %></h5>
-                 <h5 class="card-title"><%= real_estate.rut %></h5>
-                 <h5 class="card-title"><%= real_estate.agent %></h5>
-                 <h5 class="card-title"><%= real_estate.mail %></h5>
-                 <h5 class="card-title"><%= real_estate.phone %></h5>
-                 <%if real_estate.opinions.any?%>
-                    <h5 class="card-title"><%= real_estate.opinions %></h5>
-                 <%end%>
-                 <h5 class="card-title"><%= link_to 'Show', real_estate_broker_path(real_estate), class: "btn btn-outline-primary" %></h5>
-                <%if user_signed_in?%>
-                    <h5><%= link_to 'Edit', edit_real_estate_broker_path(real_estate), class: "btn btn-outline-primary" %>
-                    <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), class: "btn btn-info" %>
-                <%end%>
-               </div>
-           </div>   
-           
-      <% end %>
-    
-    </div>
-<% end %>
+  <div class="row ">
+    <% @real_estate_brokers.each do |real_estate|%>
+      <div class= "card-deck d-flex justify-content-around">
+        <div class="card m-4 col-xs-8 col-md-6 card-index" >
+          <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
+            <div class="text-center">
+              <%= image_tag 'broker-default.svg', size: "60x60", class:"rounded" if !real_estate.image.attached?%> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= real_estate.name  %></h5>
+              <h5 class="card-title"><%= real_estate.rut %></h5>
+              <h5 class="card-title"><%= real_estate.agent %></h5>
+              <h5 class="card-title"><%= real_estate.mail %></h5>
+              <h5 class="card-title"><%= real_estate.phone %></h5>
+              <%if real_estate.opinions.any?%>
+                  <h5 class="star-rating" data-score=<%= real_estate.average_opinion %>></h5>
+              <%end%>
+              <h5 class="card-title"><%= link_to 'Show', real_estate_broker_path(real_estate), class: "btn btn-outline-primary" %></h5>
+              <%if user_signed_in?%>
+                <h5><%= link_to 'Edit', edit_real_estate_broker_path(real_estate), class: "btn btn-outline-primary" %>
+                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), class: "btn btn-info" %>
+              <%end%>
+            </div>
+        </div>   
+      </div>
+    <% end %>
+  </div>
 </div>
+
+
+<script>
+  $('.star-rating').raty({
+	  path: '/assets/',
+	  readOnly: true,
+	  score: function() {
+	    return $(this).attr('data-score');
+	    }
+	});
+</script>
