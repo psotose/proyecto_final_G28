@@ -30,14 +30,15 @@
   <%= image_tag @real_estate_broker.image.variant(resize: "100x100") if @real_estate_broker.image.attached? %>
   <%= image_tag 'broker-default.svg' if !@real_estate_broker.image.attached?%> 
 </p>
-
+<div class="star-rating" data-score=<%=@average_opinion %>></div>
+<p><%= "#{@opinions.length} reseñas"%></p>    
   <% if @opinions.blank? %>
     <h3>Aun no hay reseñas sobre esta corredora, te gustaría dejar una?</h3>
     <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(@real_estate_broker), class: "btn btn-danger" %>
   <% else %>
     <% @opinions.each do |opinion| %>
       <div class="reviews">
-        <p><%= opinion.rating %></p>
+        <div class="star-rating" data-score=<%= opinion.rating %>></div>
         <p><%= opinion.comment %></p>
       </div>
     <% end %>
@@ -45,3 +46,13 @@
 <%= link_to 'Edita', edit_real_estate_broker_path(@real_estate_broker) %> |
 
 <%= link_to 'Back', real_estate_brokers_path %>
+
+<script>
+  $('.star-rating').raty({
+	  path: '/assets/',
+	  readOnly: true,
+	  score: function() {
+	    return $(this).attr('data-score');
+	    }
+	});
+</script>

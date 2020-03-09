@@ -12,8 +12,7 @@
     <% end %>
 
     <div class="form-group">
-    <%= f.label :Califica_del_1_al_5 %>
-    <%= f.number_field :rating %>
+      <div id="star-rating"></div>
     </div>
 
     <div class="form-group">
@@ -26,3 +25,10 @@
     </div>
 
 <% end %>
+
+<script>
+	$('#star-rating').raty({
+	  path: '/assets/',
+	  scoreName: 'opinion[rating]'
+	});
+</script>
