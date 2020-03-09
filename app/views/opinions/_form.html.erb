@@ -4,7 +4,7 @@
           <h2><%= pluralize(opinion.errors.count, "error") %> No es posible guardar esta reseña:</h2>
 
           <ul>
-            <% opinion.full_messages.each do |message| %>
+            <% opinion.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
           </ul>

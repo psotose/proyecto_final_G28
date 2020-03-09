@@ -1,18 +1,19 @@
-<p id="notice"><%= notice %></p>
-<header class="hero text-light text-right pt-5 mt-5">
+
+<header class="hero text-light text-right pt-5">
   <div class="container">
-    <h1 class="display-1 font-weight-bold my-5">Mi Corredora</h1>
+    <h1 class="font-weight-bold my-5">Mi Corredora</h1>
     <p class="my-5">Ante tanta oferta no regulada de corredoras de propiedas, surge esta iniciativa para que puedas 
     compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.</p>
   </div>
 </header>
 
 <h1 class="py-4" align="center">Corredoras</h1>
-
-<% @real_estate_brokers.each_slice(4) do |real_estates|%>
-    <div class= "card-deck">
+<div class="container">
+<% @real_estate_brokers.each_slice(3) do |real_estates|%>
+    <div class= "card-deck d-flex justify-content-around">
+    
       <% real_estates.each do |real_estate| %>  
-           <div class="card my-3" style="width: 18rem;">
+           <div class="card " >
                <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
                <div class="text-center">
                <%= image_tag 'broker-default.svg', size: "60x60", class:"rounded" if !real_estate.image.attached?%> 
@@ -32,7 +33,10 @@
                     <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), class: "btn btn-info" %>
                 <%end%>
                </div>
-           </div>    
+           </div>   
+           
       <% end %>
+    
     </div>
 <% end %>
+</div>

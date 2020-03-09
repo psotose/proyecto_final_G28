@@ -11,14 +11,17 @@ class OpinionsController < ApplicationController
     end    
 
     def create
-        @opinion = Opinion.new(opinion_params)
-        @opinion.real_estate_broker = RealEstateBroker.find(params[:real_estate_broker_id])
-        @opinion.user = current_user
+      @opinion = Opinion.new(opinion_params)
+      @opinion.real_estate_broker = RealEstateBroker.find(params[:real_estate_broker_id])
+      @opinion.user = current_user
+      
+      respond_to do |format|
         if @opinion.save
-            format.html { redirect_to real_estate_broker_path(@opinion.real_estate_broker), notice: 'Su comentario ha sido guardado con éxito!.' }
+            format.html { redirect_to @opinion.real_estate_broker, notice: 'Su comentario ha sido guardado con éxito!.' }
         else    
-            format.html {render :new}
+            format.html { render :new }
         end
+      end
     end  
     
     def update

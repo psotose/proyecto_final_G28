@@ -14,11 +14,14 @@
   </head>
 
   <body> 
+  <%if notice%>
+  <p id="notice"><%= notice %></p>
+  <%end %>
     <%= render 'shared/navigation'%>
     <%= render 'shared/alerts'%>
-    <div class="container my-5">
+    
     <%= yield %>
-    </div>
+    
     <%= render 'shared/footer'%>
     
   </body>

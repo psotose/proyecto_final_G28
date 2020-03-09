@@ -30,11 +30,5 @@
   left: auto;
 }
 
-header {
-  background-image: url("./assets/images/jumbotron.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left;
-  padding-bottom: 10rem;
-}
+
 
