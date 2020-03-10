@@ -4,17 +4,16 @@
     <h1 class="font-weight-bold my-5">Mi Corredora</h1>
     <p class="my-5">Ante tanta oferta no regulada de corredoras de propiedas, surge esta iniciativa para que puedas 
     compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.</p>
-  </div>
+  
   <form class="search-form text-center">
-  <input type="search" placeholder="Nombre corredora" class">
-  <input type="submit" value="Buscar" class="cbtn btn-primary button-fluid">
+  <input type="text" name="q" placeholder="Nombre corredora" class="form-control">
   </form>
-
+</div>
 </header>
 
 <h1 class="py-4" align="center">Corredoras</h1>
 
-<div class="container">
+<div class="container" id="response">
   <div class="row ">
     <% @real_estate_brokers.each do |real_estate|%>
       <div class= "card-deck d-flex justify-content-around">
