@@ -4,32 +4,8 @@
 
 <div class="container">
   <div class="row ">
-    <% @real_estate_brokers.each do |real_estate|%>
-      <div class= "card-deck d-flex justify-content-around">
-          <div class="card m-4 col-xs-8 col-md-6 card-index">
-            <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached?%> 
-              <div class="text-center">
-                <%= image_tag 'broker-default.svg', size: "60x60", class:"rounded" if !real_estate.image.attached?%> 
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><%= real_estate.name  %></h5>
-                <h5 class="card-title"><%= real_estate.rut %></h5>
-                <h5 class="card-title"><%= real_estate.agent %></h5>
-                <h5 class="card-title"><%= real_estate.mail %></h5>
-                <h5 class="card-title"><%= real_estate.phone %></h5>
-                <%if real_estate.opinions.any?%>
-                <h5 class="star-rating" data-score=<%= real_estate.average_opinion %>></h5>
-                <%else%>
-                <h3>Aun no hay reseñas sobre esta corredora, te gustaría dejar una?</h3>
-                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), class: "btn btn-danger" %>
-                <%end%>
-                <h5><%= link_to 'Show', real_estate, class: "btn btn-outline-primary" %>
-                <%= link_to 'Edit', edit_real_estate_broker_path(real_estate, class: "btn btn-outline-primary") %>
-                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), class: "btn btn-danger" %>
-                <%= link_to 'Destroy', real_estate, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
-              </div>
-          </div>  
-      </div>    
+    <% @real_estate_brokers.each do |real_estate_broker|%>
+      <%= render real_estate_broker %>    
     <% end %>
   </div>
 </div>
