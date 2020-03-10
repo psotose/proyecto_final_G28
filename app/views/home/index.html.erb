@@ -5,8 +5,9 @@
     <p class="my-5">Ante tanta oferta no regulada de corredoras de propiedas, surge esta iniciativa para que puedas 
     compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.</p>
   
-  <form class="search-form text-center">
-  <input type="text" name="q" placeholder="Nombre corredora" class="form-control">
+  <form class="search-form text-center d-inline-flex">
+  <input type="text" name="q" placeholder="Digita el nombre de la corredora que buscas" class="form-control" id="search_q">
+  <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
   </form>
 </div>
 </header>
@@ -43,7 +44,7 @@
   </div>
 </div>
 
-
+<%= paginate @real_estate_brokers %>
 <script>
   $('.star-rating').raty({
 	  path: '/assets/',
