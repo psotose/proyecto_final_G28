@@ -1,10 +1,9 @@
 $(document).on("ready turbolinks:load", function() {
   $("[name=q]").on("keyup", function() {
     if ($(this).val().length > 2) {
-      console.log("banana");
       $.ajax({
         type: "get",
-        url: "/home/index",
+        url: "/",
         data: { q: $(this).val() },
         dataType: "script"
       });
@@ -12,7 +11,7 @@ $(document).on("ready turbolinks:load", function() {
     if ($(this).val().length == 0) {
       $.ajax({
         type: "get",
-        url: "/home/index",
+        url: "/",
         dataType: "script"
       });
     }

@@ -14,8 +14,8 @@
 
 <h1 class="py-4" align="center">Corredoras</h1>
 
-<div class="container" id="response">
-  <div class="row ">
+<div class="container" >
+  <div class="row " id="response">
     <% @real_estate_brokers.each do |real_estate|%>
       <div class= "card-deck d-flex justify-content-around">
         <div class="card m-4 col-xs-8 col-md-6 card-index" >
@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<%= paginate @real_estate_brokers %>
+
 <script>
   $('.star-rating').raty({
 	  path: '/assets/',
