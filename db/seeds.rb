@@ -8,6 +8,7 @@
 User.destroy_all
 RealEstateBroker.destroy_all
 Opinion.destroy_all
+AdminUser.destroy_all
 
 5.times do |i|
     User.create(name: "User #{i}",email: "#{i}@gmail.com", password: "123456")
@@ -30,3 +31,5 @@ Opinion.where(real_estate_broker_id: 2, user_id: 1, rating: 2, comment: "Quedamo
 Opinion.where(real_estate_broker_id: 2, user_id: 4, rating: 1, comment: "Nos robaron el deposito")
 Opinion.where(real_estate_broker_id: 3, user_id: 1, rating: 4, comment: "Buena atencion, recomendable!")
 Opinion.where(real_estate_broker_id: 4, user_id: 2, rating: 3, comment: "Ningun problema")   
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
