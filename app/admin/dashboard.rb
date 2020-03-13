@@ -17,7 +17,22 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
     end
+
+    columns do
+      panel "Corredoras" do
+        ul do
+          li "Corredoras creadas: #{RealEstateBroker.count}"
+        end
+      end
+    end
     
+    columns do
+      panel "Opiniones" do
+        ul do
+          li "Opiniones creadas: #{Opinion.count}"
+        end
+      end
+    end
     panel "Gráfico" do
       render 'shared/chart'
     end
