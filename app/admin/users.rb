@@ -28,9 +28,18 @@ ActiveAdmin.register User do
     column :member_since do |user|
       time_ago_in_words(user.created_at)
     end
+    column "Corredoras", :real_estate_brokers do |user|
+      link_to user.real_estate_brokers.count, admin_user_real_estate_brokers_path(user)
+    end
+    column "Opiniones", :opinions do |user|
+      link_to user.opinions.count, admin_user_opinions_path(user)
+    end    
     actions
   end
 
+  member_action :opinions do
+    @opinios = User.find(params[:id]).opinions
+  end  
   form do |f|
     inputs 'Crear un nuevo usuario' do
     f.input :email

@@ -1,5 +1,8 @@
 ActiveAdmin.register Opinion do
-
+  controller do
+    nested_belongs_to :real_estate_broker, optional:true
+  end
+  belongs_to :user, optional:true  
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
