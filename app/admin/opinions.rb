@@ -1,4 +1,5 @@
 ActiveAdmin.register Opinion do
+  actions :all, except: [:new, :create]
   controller do
     nested_belongs_to :real_estate_broker, optional:true
   end

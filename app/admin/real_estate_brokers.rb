@@ -29,8 +29,8 @@ ActiveAdmin.register RealEstateBroker do
       time_ago_in_words(user.updated_at)
     end
     column :user_id
-    column "Opinions", :opinions do |user|
-      link_to user.opinions.count, admin_user_opinions_path(user)
+    column "Opinions", :opinions do |reb|
+      link_to reb.opinions.count, admin_real_estate_broker_opinions_path(reb)
     end  
     actions
   end   

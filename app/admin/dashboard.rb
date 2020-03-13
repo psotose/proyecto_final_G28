@@ -22,6 +22,7 @@ ActiveAdmin.register_page "Dashboard" do
       panel "Corredoras" do
         ul do
           li "Corredoras creadas: #{RealEstateBroker.count}"
+          li "Opiniones de corredoras:  #{Opinion.joins(:real_estate_broker).group("real_estate_brokers.name").count}" 
         end
       end
     end
@@ -36,6 +37,7 @@ ActiveAdmin.register_page "Dashboard" do
     panel "Gráfico" do
       render 'shared/chart'
     end
+    
 
     # Here is an example of a simple dashboard with columns and panels.
     #
