@@ -32,4 +32,3 @@ Opinion.where(real_estate_broker_id: 2, user_id: 4, rating: 1, comment: "Nos rob
 Opinion.where(real_estate_broker_id: 3, user_id: 1, rating: 4, comment: "Buena atencion, recomendable!")
 Opinion.where(real_estate_broker_id: 4, user_id: 2, rating: 3, comment: "Ningun problema")   
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
