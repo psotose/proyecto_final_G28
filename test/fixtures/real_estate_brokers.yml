@@ -4,14 +4,14 @@ one:
   name: MyString
   rut: MyString
   agent: MyString
-  mail: MyString
+  mail: 1@gmail.com
   phone: MyString
-  image: MyString
+  user_id: 1
 
 two:
   name: MyString
   rut: MyString
   agent: MyString
-  mail: MyString
+  mail: 2@gmail.com
   phone: MyString
-  image: MyString
+  user_id: 2

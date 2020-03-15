@@ -13,8 +13,13 @@ class RealEstateBroker < ApplicationRecord
     has_many :opinions, dependent: :destroy
     belongs_to :user 
     has_one_attached :image
-    
+
+    validates :rut, :name, presence: true
+    validates_uniqueness_of :rut
+    validates :name, length: { minimum: 2,
+      alert: "El nombre de la corredora debe tener 2 caracteres como mínimo" }
     validates_with RUTValidator
+    
     def average_opinion
       if self.opinions.blank?
         0
