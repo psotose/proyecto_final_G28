@@ -12,13 +12,14 @@
                 <h5 class="card-title"><%= real_estate_broker.phone %></h5>
                 <%if real_estate_broker.opinions.any?%>
                 <h5 class="star-rating" data-score=<%= real_estate_broker.average_opinion %>></h5>
+                <h3>Te gustaría dejar una reseña sobre esta corredora?</h3>
+                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(@real_estate_broker), class: "btn btn-danger" %>
                 <%else%>
                 <h3>Aun no hay reseñas sobre esta corredora, te gustaría dejar una?</h3>
                 <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate_broker), class: "btn btn-danger" %>
                 <%end%>
                 <h5><%= link_to 'Show', real_estate_broker, class: "btn btn-outline-primary" %>
                 <%= link_to 'Edit', edit_real_estate_broker_path(real_estate_broker, class: "btn btn-outline-primary") %>
-                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate_broker), class: "btn btn-danger" %>
                 <%= link_to 'Destroy', real_estate_broker, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
               </div>
           </div>  

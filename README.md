@@ -29,3 +29,4 @@ El diseño de la base de datos contempla las siguientes tablas/modelos con las r
 -rails db:migrate
 -rails db:seed
 -rails s
+-yarn install
