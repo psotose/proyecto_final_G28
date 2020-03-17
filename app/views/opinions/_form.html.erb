@@ -10,22 +10,22 @@
           </ul>
         </div>
     <% end %>
-
+<div class="container text-center">
     <div class="form-group">
       <div id="star-rating"></div>
     </div>
-
+    <br>
     <div class="form-group">
       <%= f.label :Escribe_tu_reseña %>
       <%= f.text_field :comment %>
     </div>
-
+    <br>
     <div class="actions">
     <%= f.submit %>
     </div>
 
 <% end %>
-
+</div>
 <script>
 	$('#star-rating').raty({
 	  path: '/assets/',

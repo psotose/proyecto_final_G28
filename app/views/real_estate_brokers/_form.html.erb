@@ -10,38 +10,40 @@
       </ul>
     </div>
   <% end %>
+  <div class="container">
+    <div class="form-group">
+      <%= form.label :Nombre_Corredora %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :Nombre_Corredora %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="form-group">
+      <%= form.label :Rut %>
+      <%= form.text_field :rut %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :Rut %>
-    <%= form.text_field :rut %>
-  </div>
+    <div class="form-group">
+      <%= form.label :Agente %>
+      <%= form.text_field :agent %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :Agente %>
-    <%= form.text_field :agent %>
-  </div>
+    <div class="form-group">
+      <%= form.label :Mail %>
+      <%= form.email_field :mail %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :Mail %>
-    <%= form.email_field :mail %>
-  </div>
+    <div class="form-group">
+      <%= form.label :Teléfono_o_Celular %>
+      <%= form.text_field :phone %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :Teléfono_o_Celular %>
-    <%= form.text_field :phone %>
-  </div>
+    <div class="form-group">
+      <%= form.label :Imágen %>
+      <%= form.file_field :image %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label :Imágen %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>  
 <% end %>
+
