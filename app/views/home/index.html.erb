@@ -35,7 +35,7 @@
               <h5 class="card-title"><%= link_to 'Show', real_estate_broker_path(real_estate), class: "btn btn-outline-primary" %></h5>
               <%if user_signed_in?%>
                 <h5><%= link_to 'Edit', edit_real_estate_broker_path(real_estate), class: "btn btn-outline-primary" %>
-                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), class: "btn btn-info" %>
+                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), 'data-remote': true, class: "btn btn-info" %>
               <%end%>
             </div>
         </div>   
@@ -43,7 +43,7 @@
     <% end %>
   </div>
 </div>
-
+<%= render 'modal'%>
 
 <script>
   $('.star-rating').raty({

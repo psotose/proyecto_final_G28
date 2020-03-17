@@ -34,7 +34,6 @@
         <p><%= "#{@opinions.length} reseñas"%></p>    
           <% if @opinions.blank? %>
             <h3>Aun no hay reseñas sobre esta corredora, te gustaría dejar una?</h3>
-            <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(@real_estate_broker), 'data-remote': true, class: "btn btn-danger" %>
           <% else %>
             <% @opinions.each do |opinion| %>
               <div class="reviews">
@@ -43,6 +42,7 @@
               </div>
             <% end %>
         	<% end %>
+            <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(@real_estate_broker), 'data-remote': true, class: "btn btn-danger" %>
         <%= link_to 'Edita', edit_real_estate_broker_path(@real_estate_broker) %> |
         <%= link_to 'Back', real_estate_brokers_path %>
       </div>
