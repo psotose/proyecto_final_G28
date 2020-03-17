@@ -27,6 +27,6 @@ El diseño de la base de datos contempla las siguientes tablas/modelos con las r
 -Clonar el repo
 -rails db:create
 -rails db:migrate
+-yarn install
 -rails db:seed
 -rails s
--yarn install
