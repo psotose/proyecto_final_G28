@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="py-4" align="center">Corredoras</h1>
+<h1 class="py-4" align="center">Corredoras que he creado</h1>
 
 <div class="container">
   <div class="row ">
@@ -9,8 +9,9 @@
     <% end %>
   </div>
 </div>
-        
-<%= link_to 'New Real Estate Broker', new_real_estate_broker_path %>
+<div class="text-center">        
+  <%= link_to 'Crear nueva Corredora', new_real_estate_broker_path, class: 'btn btn-primary' %>
+</div>
 <%= render 'modal'%>
 <script>
   $('.star-rating').raty({
