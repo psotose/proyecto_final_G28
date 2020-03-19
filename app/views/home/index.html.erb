@@ -54,10 +54,10 @@
         </div>   
       </div> 
     <% end %>
+    <%= paginate @real_estate_brokers %>
   </div>
 </div>
 <%= render 'modal'%>
-
 <script>
   $('.star-rating').raty({
 	  path: '/assets/',
