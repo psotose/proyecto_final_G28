@@ -16,7 +16,7 @@
           <p class="card-text"><%= real_estate_broker.mail %></p>
           <p class="card-text"><%= real_estate_broker.phone %></p>
           <h5 class="star-rating" data-score=<%= real_estate_broker.average_opinion %>></h5>
-          <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate_broker), 'data-remote': true, class: "btn btn-info" %>
+          <%= link_to "Escribir reseña", new_real_estate_broker_opinion_path(real_estate_broker), 'data-remote': true, class: "btn btn-info" %>
           <%if real_estate_broker.opinions.any?%>
             <p>Te gustaría dejar una reseña?</p>
           <%else%>

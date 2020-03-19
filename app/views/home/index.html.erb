@@ -1,10 +1,11 @@
 
 <header class="hero text-secondary text-right pt-5">
   <div class="container">
-    <h1 class="font-weight-bold display-3 my-5">Mi Corredora</h1>
+    <h1 class="font-weight-bold display-4 my-5">Mi Corredora</h1>
     <p class="font-weight-bold text-dark my-5 ">Ante tanta oferta no regulada de corredoras de propiedades, surge esta iniciativa para que puedas 
       compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.
     </p>
+    
     <form class="search-form text-center d-inline-flex">
       <input type="text" name="q" placeholder="Digita el nombre de la corredora que buscas" class="form-control" id="search_q">
       <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
@@ -46,7 +47,7 @@
                 <%= link_to 'Editar', edit_real_estate_broker_path(real_estate), class: "btn btn-secondary" %>
               </div>
               <div class="btn-group btn-group-sm" role="group" aria-label="...">
-                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), 'data-remote': true, class: "btn btn-info" %>
+                <%= link_to "Escribir reseña", new_real_estate_broker_opinion_path(real_estate), 'data-remote': true, class: "btn btn-info" %>
               </div>  
             <%end%>
           </div>
