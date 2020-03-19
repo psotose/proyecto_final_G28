@@ -9,7 +9,6 @@ end
   
 class RealEstateBroker < ApplicationRecord
     include ActiveModel::Validations
-
     has_many :opinions, dependent: :destroy
     belongs_to :user 
     has_one_attached :image
@@ -20,6 +19,7 @@ class RealEstateBroker < ApplicationRecord
       alert: "El nombre de la corredora debe tener 2 caracteres como mínimo" }
     validates_with RUTValidator
     
+    scope :order_by_opinion, -> {joins(:opinions).group("real_estate_brokers.id").order("AVG(opinions.rating) DESC")}
     def average_opinion
       if self.opinions.blank?
         0
