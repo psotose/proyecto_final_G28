@@ -4,11 +4,15 @@
   <div class="row">
     <div class="col">
       <p>
-        <strong>Name:</strong>
+        <%= image_tag @real_estate_broker.image.variant(resize: "100x100") if @real_estate_broker.image.attached? %>
+        <%= image_tag 'broker-default.svg', size: "60x60", class:"rounded" if !@real_estate_broker.image.attached?%> 
+      </p>
+      <p>
+        <strong>Name:</strong><br>
         <%= @real_estate_broker.name %>
       </p>
       <p>
-        <strong>Rut:</strong>
+        <strong>Rut:</strong><br>
         <%= @real_estate_broker.rut %>
       </p>
       <p>
@@ -17,18 +21,14 @@
       </p>
 
       <p>
-        <strong>Mail:</strong>
+        <strong>Mail:</strong><br>
         <%= @real_estate_broker.mail %>
       </p>
       <p>
-        <strong>Phone:</strong>
+        <strong>Tel/Cel:</strong><br>
         <%= @real_estate_broker.phone %>
       </p>
-      <p>
-        <strong>Image:</strong>
-        <%= image_tag @real_estate_broker.image.variant(resize: "100x100") if @real_estate_broker.image.attached? %>
-        <%= image_tag 'broker-default.svg', size: "60x60", class:"rounded" if !@real_estate_broker.image.attached?%> 
-      </p>
+      
         <%= link_to 'Edita la información de la corredora', edit_real_estate_broker_path(@real_estate_broker), class: "btn btn-info" %> 
     </div>
     <div class="col">
@@ -45,11 +45,14 @@
             <% end %>
         	<% end %>
         <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(@real_estate_broker), 'data-remote': true, class: "btn btn-info" %>
-        <%= link_to 'Volver', real_estate_brokers_path, class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
 </div>  
+<br>
+<div class="offset-md-10">
+  <%= link_to 'Volver', real_estate_brokers_path, class: 'btn btn-primary' %>
+</div>        
 <%= render 'modal'%>
 <script>
   $('.star-rating').raty({

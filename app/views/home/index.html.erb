@@ -1,48 +1,57 @@
 
-<header class="hero text-light text-right pt-5">
+<header class="hero text-secondary text-right pt-5">
   <div class="container">
-    <h1 class="font-weight-bold my-5">Mi Corredora</h1>
-    <p class="my-5">Ante tanta oferta no regulada de corredoras de propiedas, surge esta iniciativa para que puedas 
-    compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.</p>
-  
-  <form class="search-form text-center d-inline-flex">
-  <input type="text" name="q" placeholder="Digita el nombre de la corredora que buscas" class="form-control" id="search_q">
-  <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
-  </form>
-</div>
+    <h1 class="font-weight-bold display-3 my-5">Mi Corredora</h1>
+    <p class="font-weight-bold text-dark my-5 ">Ante tanta oferta no regulada de corredoras de propiedades, surge esta iniciativa para que puedas 
+      compartir tus experiencias y de esta manera colaborar con las personas que están intentando arrendar en Santiago.
+    </p>
+    <form class="search-form text-center d-inline-flex">
+      <input type="text" name="q" placeholder="Digita el nombre de la corredora que buscas" class="form-control" id="search_q">
+      <button type="submit" class="searchButton"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
 </header>
 
 <h1 class="py-4" align="center">Corredoras</h1>
 
 <div class="container mb-5" >
-  <div class="row " id="response">
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
     <% @real_estate_brokers.each do |real_estate|%>
-      <div class= "card-deck d-flex justify-content-around">
-        <div class="card m-4 col-xs-8 col-md-6 card-index" >
-          <%= image_tag real_estate.image.variant(resize: "100x100") if real_estate.image.attached? %>
+      <div class="col mb-2">
+        <div class="card h-100" >
+          <%if real_estate.image.attached?%>
             <div class="text-center">
-              <%= image_tag 'broker-default.svg', size: "60x60", class:"rounded" if !real_estate.image.attached?%> 
+              <%= image_tag real_estate.image.variant(resize: "100x100"), class:"card-img-top mt-2" %>
             </div>
-            <div class="card-body">
-              <h5 class="card-title"><%= real_estate.name  %></h5>
-              <h5 class="card-title"><%= real_estate.rut %></h5>
-              <h5 class="card-title"><%= real_estate.agent %></h5>
-              <h5 class="card-title"><%= real_estate.mail %></h5>
-              <h5 class="card-title"><%= real_estate.phone %></h5>
-              <%if real_estate.opinions.any?%>
-                  <h5 class="star-rating" data-score=<%= real_estate.average_opinion %>></h5>
-              <%end%>
-              
-              <h5 class="card-title"><div class="btn-group btn-group-sm" role="group" aria-label="..."><%= link_to 'Ver mas', real_estate_broker_path(real_estate), class: "btn btn-success" %></div></h5>
-              
-              <%if user_signed_in?%>
-              
-                <h5><div class="btn-group btn-group-sm" role="group" aria-label="..."><%= link_to 'Editar', edit_real_estate_broker_path(real_estate), class: "btn btn-secondary" %></div>
-                <div class="btn-group btn-group-sm" role="group" aria-label="..."><%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), 'data-remote': true, class: "btn btn-info" %></div>
-              <%end%>
+          <%else%>
+            <div class="text-center">
+              <%= image_tag 'broker-default.svg', size: "100x100", class:"card-img-top mt-2"%> 
             </div>
+          <%end%>
+          <div class="card-body">
+            <h5 class="card-title"><%= real_estate.name %></h5>
+            <p class="card-text"><%= real_estate.agent %></p>
+            <p class="card-text"><%= real_estate.phone %></p>
+            <h5 class="star-rating" data-score=<%= real_estate.average_opinion %>></h5>
+            <%if real_estate.opinions.any?%>
+            <h4>Te gustaría dejar una reseña?</h4>
+            <%else%>
+              <p>Aun no hay calificaciones, se el primero!</p>    
+            <%end%>          
+            <div class="btn-group btn-group-sm" role="group" aria-label="...">
+              <%= link_to 'Ver mas', real_estate_broker_path(real_estate), class: "btn btn-success" %>
+            </div>              
+            <%if user_signed_in?%>
+              <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                <%= link_to 'Editar', edit_real_estate_broker_path(real_estate), class: "btn btn-secondary" %>
+              </div>
+              <div class="btn-group btn-group-sm" role="group" aria-label="...">
+                <%= link_to "Escribe una reseña", new_real_estate_broker_opinion_path(real_estate), 'data-remote': true, class: "btn btn-info" %>
+              </div>  
+            <%end%>
+          </div>
         </div>   
-      </div>
+      </div> 
     <% end %>
   </div>
 </div>

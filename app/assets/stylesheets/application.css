@@ -34,10 +34,6 @@ body {
   left: auto;
 }
 
-.card-index {
-  max-width: 260px;
-}
-
 #search_q {
   width: 90%;
 }
@@ -46,4 +42,3 @@ footer {
   background: #1f4287;
   margin-bottom: 0;
 }
-

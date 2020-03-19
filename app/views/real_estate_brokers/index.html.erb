@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="py-4" align="center">Corredoras que he creado</h1>
+<h1 class="py-4" align="center">Corredoras que has creado</h1>
 
-<div class="container">
-  <div class="row ">
+<div class="container mb-5">
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
     <% @real_estate_brokers.each do |real_estate_broker|%>
       <%= render real_estate_broker %>    
     <% end %>
