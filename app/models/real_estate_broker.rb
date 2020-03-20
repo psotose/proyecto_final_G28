@@ -19,7 +19,7 @@ class RealEstateBroker < ApplicationRecord
       alert: "El nombre de la corredora debe tener 2 caracteres como mínimo" }
     validates_with RUTValidator
     
-    scope :order_by_opinion, -> {left_joins(:opinions).group("real_estate_brokers.id").order("AVG(opinions.rating).null? DESC")}
+    scope :order_by_opinion, -> {left_joins(:opinions).group("real_estate_brokers.id").order("AVG(case when opinions.rating is not null then opinions.rating else 0 end) DESC")}
     def average_opinion
       if self.opinions.blank?
         0
