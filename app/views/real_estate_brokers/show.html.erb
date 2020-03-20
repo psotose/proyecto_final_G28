@@ -35,7 +35,7 @@
       <div class="star-rating" data-score=<%=@average_opinion %>></div>
         <p><%= "#{@opinions.length} reseñas"%></p>    
           <% if @opinions.blank? %>
-            <h4>Aun no hay reseñas, te gustaría dejar una?</h4>
+            <p>Aun no hay reseñas, te gustaría dejar una?</p>
           <% else %>
             <% @opinions.each do |opinion| %>
               <div class="reviews">

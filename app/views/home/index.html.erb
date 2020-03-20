@@ -35,7 +35,7 @@
             <p class="card-text"><%= real_estate.phone %></p>
             <h5 class="star-rating" data-score=<%= real_estate.average_opinion %>></h5>
             <%if real_estate.opinions.any?%>
-            <h4>Te gustaría dejar una reseña?</h4>
+            <p>Te gustaría dejar una reseña?</p>
             <%else%>
               <p>Aun no hay calificaciones, se el primero!</p>    
             <%end%>          
