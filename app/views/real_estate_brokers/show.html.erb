@@ -32,7 +32,7 @@
         <%= link_to 'Edita la información de la corredora', edit_real_estate_broker_path(@real_estate_broker), class: "btn btn-info" %> 
     </div>
     <div class="col">
-      <div class="star-rating" data-score=<%=@average_opinion %>></div>
+      <div class="star-rating" data-score=<%= @real_estate_broker.average_opinion %>></div>
         <p><%= "#{@opinions.length} reseñas"%></p>    
           <% if @opinions.blank? %>
             <p>Aun no hay reseñas, te gustaría dejar una?</p>
@@ -51,7 +51,7 @@
 </div>  
 <br>
 <div class="offset-md-10">
-  <%= link_to 'Volver', real_estate_brokers_path, class: 'btn btn-primary' %>
+  <%= link_to 'Volver', root_path, class: 'btn btn-primary' %>
 </div>        
 <%= render 'modal'%>
 <script>
