@@ -19,7 +19,7 @@ class OpinionsController < ApplicationController
         if @opinion.save
             format.html { redirect_to @opinion.real_estate_broker, notice: 'Su comentario ha sido guardado con éxito!.' }
         else    
-            format.html { render :new }
+            format.html { render :new, alert: 'No ha sido posible guardar su comentario' }
         end
       end
     end  
@@ -29,7 +29,7 @@ class OpinionsController < ApplicationController
             if @opinion.update(opinion_params)
                 format.html { redirect_to @opinion, notice: 'Tu comentario se ha actualizado.' }
             else
-                format.html { render :edit }   
+                format.html { render :edit, alert: 'No ha sido posible actualizar su comentario' }   
             end
         end
     end  
@@ -37,7 +37,7 @@ class OpinionsController < ApplicationController
     def destroy
         @opinion.destroy
         respond_to do |format|
-            format.html { redirect_to opinions_url, notice: 'Tu comentario se ha eliminado!.' }
+            format.html { redirect_to opinions_url, alert: 'Tu comentario se ha eliminado!.' }
         end
     end
     

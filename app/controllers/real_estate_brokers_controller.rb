@@ -33,7 +33,7 @@ class RealEstateBrokersController < ApplicationController
         format.html { redirect_to @real_estate_broker, notice: 'La corredora ha sido creada.' }
         format.json { render :show, status: :created, location: @real_estate_broker }
       else
-        format.html { render :new }
+        format.html { render :new, alert: 'No ha sido posible crear la corredora.' }
         format.json { render json: @real_estate_broker.errors, status: :unprocessable_entity }
       end
     end
@@ -47,7 +47,7 @@ class RealEstateBrokersController < ApplicationController
         format.html { redirect_to @real_estate_broker, notice: 'La información de la corredora ha sido modificada éxitosamente!.' }
         format.json { render :show, status: :ok, location: @real_estate_broker }
       else
-        format.html { render :edit }
+        format.html { render :edit, alert: 'No ha sido posible modificar la información de la corredora.' }
         format.json { render json: @real_estate_broker.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +58,7 @@ class RealEstateBrokersController < ApplicationController
   def destroy
     @real_estate_broker.destroy
     respond_to do |format|
-      format.html { redirect_to real_estate_brokers_url, notice: 'Se ha eliminado la corredora.' }
+      format.html { redirect_to real_estate_brokers_url, alert: 'Se ha eliminado la corredora.' }
       format.json { head :no_content }
     end
   end
